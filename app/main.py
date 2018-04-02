@@ -1,8 +1,11 @@
 from lib import liblist
 import sys
 
+args = sys.argv
+del args[0]
+
 def main():
-    print(sys.argv)
+    print(args)
     liblist.loadList()
 
 if __name__ == '__main__':
