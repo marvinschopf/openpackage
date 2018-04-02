@@ -10,7 +10,7 @@ def loadList(silent=False):
     if silent:
         cloneMethod = "gitpython"
     else:
-        cloneMethod = "console"
+        cloneMethod = "gitpython"
     if not homedir[-1:] == "/":
         homedir = homedir + "/"
     clonedir = homedir + directory
