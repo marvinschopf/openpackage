@@ -113,8 +113,10 @@ class Package:
             if url.startswith("https://"):
                 if log:
                     print("--Warning: We are not using any certificate validation!")
-                gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
-                with urllib.request.urlopen(url, context=gcontext) as u, \
+                ctx = ssl.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = ssl.CERT_NONE
+                with urllib.request.urlopen(url, context=ctx) as u, \
                         open(targetName, 'wb') as f:
                     f.write(u.read())
             else:
