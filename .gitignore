@@ -1,2 +1,6 @@
 __pycache__
 pip-selfcheck.json
+*.c
+main.spec
+dist
+build

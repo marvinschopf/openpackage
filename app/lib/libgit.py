@@ -12,9 +12,12 @@ def clone(git_url, repo_dir, use_console_or_gitpython="gitpython", log=True, for
     else:
         if log:
             print("--not deleting repo_dir")
+    if log:
+        print("--cloning")
     if use_console_or_gitpython == "console":
         process = subprocess.Popen(["git", "clone", git_url, repo_dir])
         process.wait()
     elif use_console_or_gitpython == "gitpython":
         Repo.clone_from(git_url, repo_dir)
-    print("--cloning done")
+    if log:
+        print("--cloning done")
