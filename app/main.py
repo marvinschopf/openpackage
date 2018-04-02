@@ -5,4 +5,7 @@ def main():
     print(sys.argv)
     liblist.loadList()
 
-main()
+if __name__ == '__main__':
+    main()
+else:
+    print("--we are not in main process, aborting!")
