@@ -107,7 +107,7 @@ class Package:
         for step in self.getInstallSteps():
             url = step
             targetName = name + "-" + url.split("/")[-1]
-            targetDirectory = self.getName() + self.getVersion()
+            targetDirectory = str(self.getName()) + "-" + str(self.getVersion())
             if log:
                 print("--Saving", url, "to", targetName)
             if url.startswith("https://"):
