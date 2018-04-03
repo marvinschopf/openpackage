@@ -126,6 +126,7 @@ class Package:
             zip_ref = zipfile.ZipFile(targetName, 'r')
             zip_ref.extractall(targetDirectory)
             zip_ref.close()
+            os.remove(targetName)
             if log:
                 print("--Done with artefact", targetDirectory)
 
